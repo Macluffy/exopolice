@@ -1,9 +1,1 @@
-
- @extends('template.welcome1')
-
-
-
-
-                  
-            
-            
+@extends('template.welcome1')

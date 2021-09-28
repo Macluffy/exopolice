@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth','admin'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -34,12 +34,12 @@ Route::get('/testimonials', function () {
 });
 
 
-Route::resource('/contact', ContactController::class)->middleware(['auth']);
+Route::resource('/contact', ContactController::class)->middleware(['auth','admin']);
 
-Route::resource('/article', ArticleController::class)->middleware(['auth']);
+Route::resource('/article', ArticleController::class)->middleware(['auth','admin']);
 
-Route::resource('/commentaire', CommentaireController::class)->middleware(['auth']);
+Route::resource('/commentaire', CommentaireController::class)->middleware(['auth','admin']);
 
-Route::resource('/backtestimonials', TestimonialController::class)->middleware(['auth']);
+Route::resource('/backtestimonials', TestimonialController::class)->middleware(['auth','admin']);
 
 
